@@ -1,0 +1,25 @@
+<!-- prettier-ignore -->
+{% extends "DNA/layout.html" %}
+
+{% block body %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <label for="sets_nr"
+    >How many groups of data do you have (i.e sets of samples)?</label
+  >
+  <input type="number" name="sets_nr" min="1" required />
+
+  <label for="samples_nr"
+    >What is the largest number of items in one set of samples?</label
+  >
+  <input type="number" name="samples_nr" min="1" required />
+
+  <label for="ref_genes_nr">How many reference genes do you have?</label>
+  <input type="number" name="ref_genes_nr" min="1" required />
+
+  <label for="intrest_genes_nr">How many genes of interest do you have?</label>
+  <input type="number" name="intrest_genes_nr" min="1" required />
+</form>
+
+{% endblock %}
